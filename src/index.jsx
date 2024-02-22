@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 //Composants communs
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -10,19 +10,21 @@ import Logement from './components/Logement/Logement';
 import APropos from './components/APropos/APropos';
 import NotFound from './components/NotFound/NotFound';
 
+import './styles/index.css'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
     <Header />
-    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/logement/:id" element={<Logement />} />
         <Route path="/about" element={<APropos />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
-    </Router>
-    <Footer />
+      <Footer />
+    </BrowserRouter>
   </React.StrictMode>
 );
