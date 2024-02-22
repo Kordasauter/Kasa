@@ -1,8 +1,23 @@
 .dropdown {
-    display: flex;
     width: 1023px;
+    background-color: #F6F6F673;
+}
+
+.dropdownHeader{
+    display: flex;
+    justify-content: space-between;
     padding: 10px 20px 10px 15px;
     align-items: center;
-    justify-content: center;
-    border: 1px solid black;
+    color: #FFF;
+    border-radius: 5px;
+    background: var(--Red, #FF6060);
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.dropdown p {
+    margin: 0;
+    padding: 20px;
 }

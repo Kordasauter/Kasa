@@ -1,11 +1,11 @@
 import React from 'react';
 import '../../styles/banner.scss'
 
-function Banner({imgURL}) {
+function Banner({imgURL,text}) {
     return (
         <div className='bannerWrapper'>
             <img className='banner' src={imgURL} alt="bannière" />
-            <p>Chez vous, partout et ailleurs</p>
+            {text && (<p>{text}</p>)}
         </div>
     );
 }

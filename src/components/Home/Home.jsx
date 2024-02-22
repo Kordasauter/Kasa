@@ -8,7 +8,7 @@ import bannerImage from '../../assets/homeBanner.jpg'
 const Home = () => {
     return (
         <div>
-            <Banner imgURL={bannerImage} />
+            <Banner imgURL={bannerImage} text="Chez vous, partout et ailleurs"/>
             <CardsContainer />
         </div>
     );
