@@ -1,13 +1,15 @@
-import React from 'react';
+import React from 'react'
 import '../../styles/card.scss'
 
-function Card({title,cover}) {
+function Card({ title, cover }) {
     return (
-        <div className='card'>
-            <div className='fadding'><img src={cover} alt={title}/></div>
+        <div className="card">
+            <div className="fadding">
+                <img src={cover} alt={title} />
+            </div>
             <p>{title}</p>
         </div>
-    );
+    )
 }
 
-export default Card;
+export default Card

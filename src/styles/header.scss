@@ -1,4 +1,6 @@
-.header, nav, nav div {
+.header,
+nav,
+nav div {
     display: flex;
     justify-content: space-between;
 }
@@ -6,23 +8,23 @@
     padding-bottom: 50px;
 }
 nav div {
-    padding:10px;
+    padding: 10px;
     align-items: center;
 
     color: #000;
-text-align: right;
-font-family: Montserrat;
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: 142.6%; /* 34.224px */
-// text-decoration-line:unset;
+    text-align: right;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 142.6%; /* 34.224px */
+    // text-decoration-line:unset;
 }
 
 a {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
 }

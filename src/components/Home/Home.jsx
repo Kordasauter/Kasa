@@ -1,6 +1,6 @@
-import React from 'react';
-import Banner from '../Banner/Banner';
-import CardsContainer from '../CardsContainer/CardsContainer';
+import React from 'react'
+import Banner from '../Banner/Banner'
+import CardsContainer from '../CardsContainer/CardsContainer'
 import bannerImage from '../../assets/homeBanner.jpg'
 
 // import Card from '../Card/Card';
@@ -8,10 +8,13 @@ import bannerImage from '../../assets/homeBanner.jpg'
 const Home = () => {
     return (
         <div>
-            <Banner imgURL={bannerImage} text="Chez vous, partout et ailleurs"/>
+            <Banner
+                imgURL={bannerImage}
+                text="Chez vous, partout et ailleurs"
+            />
             <CardsContainer />
         </div>
-    );
-};
+    )
+}
 
-export default Home;
+export default Home
