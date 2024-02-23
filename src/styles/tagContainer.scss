@@ -1,0 +1,16 @@
+.tagContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    .tag {
+        min-width: 115px;
+        border-radius: 10px;
+        background: #ff6060;
+
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+    }
+}

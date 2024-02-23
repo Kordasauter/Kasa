@@ -1,0 +1,52 @@
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .host {
+        align-items: center;
+        gap: 10px;
+        .name {
+            color: #ff6060;
+            text-align: right;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+        }
+        img {
+            height: 64px;
+            border-radius: 100%;
+        }
+    }
+}
+.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.logement {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .title {
+        color: #ff6060;
+
+        font-size: 36px;
+        font-weight: 500;
+    }
+    .location {
+        // color: #000;
+
+        // font-family: Montserrat;
+        font-size: 18px;
+        // font-style: normal;
+        font-weight: 500;
+    }
+    .descriptionEquipement {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 76px;
+        margin-bottom: 50px;
+    }
+}

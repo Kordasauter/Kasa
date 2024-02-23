@@ -10,7 +10,7 @@ import Logement from './components/Logement/Logement'
 import APropos from './components/APropos/APropos'
 import NotFound from './components/NotFound/NotFound'
 
-import './styles/index.css'
+import './styles/index.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
