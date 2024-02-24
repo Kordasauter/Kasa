@@ -3,19 +3,27 @@ import { useParams } from 'react-router-dom'
 import Carrousel from '../Carrousel/Carrousel'
 import Tagscontainer from '../TagsContainer/Tagscontainer'
 import logementList from '../../datas/logements.json'
-import AProposDropdown from '../AProposDropdown/AProposDropdown'
+import Rating from '../Rating/Rating'
+import Dropdown from '../Dropdown/Dropdown'
 import '../../styles/logement.scss'
 
 function Logement(props) {
     const param = useParams()
-    // console.log(logementList.find((logement) => logement.id === param.id))
     const logement = logementList.find((logement) => logement.id === param.id)
+
+    const equipements = (
+        <ul>
+            {logement.equipments.map((equipement, index) => (
+                <li key={'equipment' + index}>{equipement}</li>
+            ))}
+        </ul>
+    )
     return (
         <div className="logement">
             <Carrousel />
             <div className="horizontal space-between ">
                 <div className="vertical">
-                    <div className="title">{logement.title}</div>
+                    <h2 className="title">{logement.title}</h2>
                     <div className="location">{logement.location}</div>
                 </div>
                 <div className="horizontal host">
@@ -23,25 +31,13 @@ function Logement(props) {
                     <img src={logement.host.picture} alt="hôte"></img>
                 </div>
             </div>
-            <div className="horizontal space-between">
-                {/* Liste */}
+            <div className="horizontal space-between gap30">
                 <Tagscontainer tagList={logement.tags} />
-                {/* fonction à faire */}
-                <div>{logement.rating}</div>
+                <Rating note={logement.rating} />
             </div>
             <div className="horizontal space-between descriptionEquipement">
-                {/* dropdown */}
-                {/* <div>{logement.description}</div> */}
-                <AProposDropdown
-                    title="Description"
-                    text={logement.description}
-                />
-                {/* dropdown */}
-                {/* <div>{logement.equipments}</div> */}
-                <AProposDropdown
-                    title="Equipements"
-                    text={logement.equipments}
-                />
+                <Dropdown title="Description" text={logement.description} />
+                <Dropdown title="Equipements" text={equipements} />
             </div>
         </div>
     )

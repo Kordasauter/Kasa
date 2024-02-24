@@ -5,8 +5,8 @@ import '../../styles/tagContainer.scss'
 function Tagscontainer({ tagList }) {
     return (
         <div className="tagContainer">
-            {tagList.map((tag) => (
-                <Tag tag={tag} />
+            {tagList.map((tag, index) => (
+                <Tag key={'tag' + index} tag={tag} />
             ))}
         </div>
     )

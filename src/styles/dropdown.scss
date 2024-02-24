@@ -1,6 +1,17 @@
 .dropdown {
-    max-width: 1023px;
+    height: fit-content;
     background-color: #f6f6f673;
+    p,
+    ul {
+        margin: 0;
+    }
+    p {
+        padding: 20px;
+    }
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
 }
 
 .dropdownHeader {
@@ -15,9 +26,4 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-}
-
-.dropdown p {
-    margin: 0;
-    padding: 20px;
 }
