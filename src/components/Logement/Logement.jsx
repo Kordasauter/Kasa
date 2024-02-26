@@ -1,26 +1,43 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { useState } from 'react'
+import { useEffect } from 'react'
 import Carrousel from '../Carrousel/Carrousel'
 import Tagscontainer from '../TagsContainer/Tagscontainer'
 import logementList from '../../datas/logements.json'
 import Rating from '../Rating/Rating'
 import Dropdown from '../Dropdown/Dropdown'
+import NotFound from '../NotFound/NotFound'
 import '../../styles/logement.scss'
 
 function Logement(props) {
     const param = useParams()
     const logement = logementList.find((logement) => logement.id === param.id)
+    const [logmentValid, setLogementValid] = useState(false)
+    const [equipements, setEquipements] = useState()
+    // verrifie si le logement est dans la liste des logements
+    useEffect(() => {
+        if (logement) setLogementValid(true)
+    }, [])
+    // si le logement est valide, on fait une liste des equipements
+    useEffect(() => {
+        logmentValid &&
+            setEquipements(
+                <ul>
+                    {logement.equipments.map((equipement, index) => (
+                        <li key={'equipment' + index}>{equipement}</li>
+                    ))}
+                </ul>
+            )
+    }, [logmentValid])
 
-    const equipements = (
-        <ul>
-            {logement.equipments.map((equipement, index) => (
-                <li key={'equipment' + index}>{equipement}</li>
-            ))}
-        </ul>
-    )
-    return (
+    return logmentValid ? (
         <div className="logement">
-            <Carrousel />
+            <Carrousel
+                photos={logement.pictures}
+                size={logement.pictures.length}
+                title={logement.title}
+            />
             <div className="horizontal space-between ">
                 <div className="vertical">
                     <h2 className="title">{logement.title}</h2>
@@ -40,6 +57,8 @@ function Logement(props) {
                 <Dropdown title="Equipements" text={equipements} />
             </div>
         </div>
+    ) : (
+        <NotFound />
     )
 }
 

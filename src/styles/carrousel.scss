@@ -1,10 +1,33 @@
 .carrousel {
-    width: 1238px; /*12340px*/
-    height: 413px; /*415px*/
+    width: 1240px; /*1240px*/
+    height: 415px; /*415px*/
 
+    position: relative;
     display: flex;
+
     align-items: center;
     justify-content: center;
-    border: 1px dotted black;
+    overflow: hidden;
+    .compteurPhoto {
+        position: absolute;
+        bottom: 0px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        width: 10%;
+    }
+    .next {
+        right: 0px;
+    }
+    .previous {
+        left: 0px;
+    }
     //margin-bottom: 10px;
 }

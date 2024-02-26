@@ -20,11 +20,15 @@ nav div {
     line-height: 142.6%; /* 34.224px */
     // text-decoration-line:unset;
 }
+nav {
+    gap: 57px;
+}
 
 a {
+    color: #000;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
+// a:hover {
+//     text-decoration: underline;
+// }
