@@ -13,12 +13,12 @@ import '../../styles/logement.scss'
 function Logement(props) {
     const param = useParams()
     const logement = logementList.find((logement) => logement.id === param.id)
-    const [logmentValid, setLogementValid] = useState(false)
+    const [logmentValid, setLogementValid] = useState(true)
     const [equipements, setEquipements] = useState()
     // verrifie si le logement est dans la liste des logements
     useEffect(() => {
-        if (logement) setLogementValid(true)
-    }, [])
+        if (!logement) setLogementValid(false)
+    }, [logement])
     // si le logement est valide, on fait une liste des equipements
     useEffect(() => {
         logmentValid &&
@@ -29,7 +29,7 @@ function Logement(props) {
                     ))}
                 </ul>
             )
-    }, [logmentValid])
+    }, [logement.equipments, logmentValid])
 
     return logmentValid ? (
         <div className="logement">
