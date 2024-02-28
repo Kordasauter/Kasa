@@ -1,11 +1,14 @@
+@import './utils/variables';
+@import './utils/mixins';
 .notFound {
-    color: #ff6060;
+    color: $primary-color;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 139px;
-    margin-top: 139px;
-    margin-bottom: 139px;
+    @media (max-width: 600px) {
+        gap: 113px;
+    }
     p {
         display: flex;
         align-items: center;
@@ -14,19 +17,28 @@
     .errorCode {
         width: 597px;
         height: 263px;
-        font-size: 288px;
-        font-weight: 700;
+        @include policeSizeWeight($fontSize--xxl, 700);
+        @media (max-width: 600px) {
+            width: 198px;
+            height: 99px;
+            @include policeSizeWeight(96px, 700);
+        }
     }
     .errorText {
-        // width: 597px;
         height: auto;
-        font-size: 36px;
-        font-weight: 500;
+        @include policeSizeWeight($fontSize--l, 500);
+        @media (max-width: 600px) {
+            width: 260px;
+            text-align: center;
+            @include policeSizeWeight($fontSize--s, 500);
+        }
     }
     .link {
-        color: #000;
-        font-size: 18px;
-        font-weight: 500;
+        color: $text-black;
+        @include policeSizeWeight($fontSize--s, 500);
         text-decoration: underline;
+        @media (max-width: 600px) {
+            @include policeSizeWeight($fontSize--xs, 500);
+        }
     }
 }

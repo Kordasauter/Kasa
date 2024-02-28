@@ -5,7 +5,7 @@ import inactiveStar from '../../assets/star-inactive 1.svg'
 function Rating({ note }) {
     const range = [1, 2, 3, 4, 5]
     return (
-        <div>
+        <div className="rating">
             {range.map((rangeNum, index) =>
                 note >= rangeNum ? (
                     <img

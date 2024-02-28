@@ -1,0 +1,20 @@
+.aPropos {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    @media (max-width: 600px) {
+        gap: 19px;
+    }
+    .dropdownContainer {
+        width: 1023px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        gap: 30px;
+        margin: 0 auto;
+        @media (max-width: 600px) {
+            width: 335px;
+            gap: 20px;
+        }
+    }
+}

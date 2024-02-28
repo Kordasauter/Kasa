@@ -1,20 +1,27 @@
+@import './utils/variables';
+@import './utils/mixins';
 .tagContainer {
+    padding: 20px 0 24px;
+
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    // flex-direction: row;
+    // justify-content: space-between;
+    // align-items: flex-end;
     gap: 10px;
+
+    @media (max-width: 600px) {
+        padding: 10px 0 16px;
+    }
     .tag {
         min-width: 115px;
         border-radius: 10px;
-        background: #ff6060;
-        padding: 0 5px;
+        background: $primary-color;
+        padding: 3px 5px 2px;
+        gap: 10px;
 
-        color: #fff;
+        color: $text-white;
         text-align: center;
-        font-size: 14px;
-        font-weight: 700;
-        padding-top: 3px;
-        padding-bottom: 2px;
+        @include policeSizeWeight($fontSize--xs, 700);
     }
 }

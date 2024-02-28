@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import '../../styles/dropdown.scss'
-import arrowdown from '../../assets/arrow_back_ios-24px 2_down.svg'
-// import arrowup from '../../assets/arrow_back_ios-24px_up.svg'
+// import arrowdown from '../../assets/arrow_back_ios-24px 2_down.svg'
+import arrowup from '../../assets/arrow_back_ios-24px_up.svg'
 
 function Dropdown({ title, text, open }) {
     const [isOpen, setIsOpen] = useState(open)
@@ -12,9 +12,9 @@ function Dropdown({ title, text, open }) {
     return (
         <div className="dropdown">
             <div className="dropdownHeader">
-                <div>{title}</div>
+                <div className="dropdownTitle">{title}</div>
                 <img
-                    src={arrowdown}
+                    src={arrowup}
                     alt="fleche"
                     onMouseDown={(e) => {
                         e.preventDefault()

@@ -1,0 +1,10 @@
+@mixin policeSizeWeight($fontSize, $fontWeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+@mixin displayFlexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

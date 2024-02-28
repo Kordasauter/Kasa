@@ -1,15 +1,18 @@
 import React from 'react'
-//import { useState } from 'react'
+//Bannière
 import Banner from '../Banner/Banner'
-import Dropdown from '../Dropdown/Dropdown'
 import bannerImage from '../../assets/aboutBanner.jpg'
-import '../../styles/dropdownContainer.scss'
+//Menu déroulant
+import Dropdown from '../Dropdown/Dropdown'
+//Contenu des menus déroulants
 import aboutList from '../../datas/about.json'
 
+import '../../styles/aPropos.scss'
+
 function APropos(props) {
-    //const [dropdownstate, updateDropdown] = useState(false)
     return (
-        <div>
+        <div className="aPropos">
+            <div></div> {/* placeholder */}
             <Banner imgURL={bannerImage} />
             <div className="dropdownContainer">
                 {aboutList.map(({ id, title, text }) => (
@@ -22,6 +25,7 @@ function APropos(props) {
                     />
                 ))}
             </div>
+            <div></div> {/* placeholder */}
         </div>
     )
 }

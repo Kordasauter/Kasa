@@ -1,3 +1,5 @@
+@import './utils/variables';
+@import './utils/mixins';
 .header,
 nav,
 nav div {
@@ -5,30 +7,33 @@ nav div {
     justify-content: space-between;
 }
 .header {
-    padding-bottom: 50px;
-}
-nav div {
-    padding: 10px;
-    align-items: center;
+    img {
+        @media (max-width: 600px) {
+            width: 145px;
+        }
+    }
+    nav {
+        gap: 57px;
+        @media (max-width: 600px) {
+            gap: 27px;
+        }
+        div {
+            padding: 10px;
+            align-items: center;
 
-    color: #000;
-    text-align: right;
-    font-family: Montserrat;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 142.6%; /* 34.224px */
-    // text-decoration-line:unset;
-}
-nav {
-    gap: 57px;
-}
+            color: $text-black;
+            text-align: right;
 
-a {
-    color: #000;
-    text-decoration: none;
-}
+            @include policeSizeWeight($fontSize--m, 500);
+            @media (max-width: 600px) {
+                @include policeSizeWeight($fontSize--xxs, 500);
+                padding: 0;
+            }
+        }
+    }
 
-// a:hover {
-//     text-decoration: underline;
-// }
+    a {
+        color: $text-black;
+        text-decoration: none;
+    }
+}

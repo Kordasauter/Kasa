@@ -1,8 +1,10 @@
 import React from 'react'
-import '../../styles/carrousel.scss'
 import { useState } from 'react'
+//Images des fleches
 import leftArrow from '../../assets/LeftArrow.svg'
 import rightArrow from '../../assets/RightArrow.svg'
+
+import '../../styles/carrousel.scss'
 
 function Carrousel({ photos, size, title }) {
     const [index, setIndex] = useState(0)
@@ -18,7 +20,7 @@ function Carrousel({ photos, size, title }) {
                     alt="bouton précédent"
                 />
             </div>
-            <img src={photos[index]} alt={title} />
+            <img className="photo" src={photos[index]} alt={title} />
             <div className="compteurPhoto">
                 {index + 1}/{size}
             </div>

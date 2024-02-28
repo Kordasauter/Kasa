@@ -1,3 +1,5 @@
+@import './utils/variables';
+@import './utils/mixins';
 .dropdown {
     position: relative;
     height: fit-content;
@@ -10,19 +12,29 @@
         justify-content: space-between;
         padding: 10px 20px 10px 15px;
         align-items: center;
-        color: #fff;
+        color: $text-white;
         border-radius: 5px;
-        background: var(--Red, #ff6060);
+        background: $primary-color;
 
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 700;
-
+        @include policeSizeWeight($fontSize--m, 700);
+        @media (max-width: 600px) {
+            padding: 0px 0px 0px 10px;
+            // padding: 0;
+            height: 30px;
+            // margin: 0;
+        }
+        .dropdownTitle {
+            @media (max-width: 600px) {
+                @include policeSizeWeight(13px, 700);
+                padding: 0;
+                margin: 0;
+            }
+        }
         .fleche {
             transform: rotate(0deg);
             transition: transform 400ms linear;
             &--up {
-                transform: rotate(180deg);
+                transform: rotate(-180deg);
                 transition: transform 400ms linear;
             }
         }
@@ -47,8 +59,12 @@
         }
     }
     .text {
-        background-color: #f6f6f673;
+        @include policeSizeWeight($fontSize--s, 400);
+        background-color: $tertiary-color;
         padding: 20px;
+        @media (max-width: 600px) {
+            @include policeSizeWeight($fontSize--xxs, 400);
+        }
     }
     ul {
         padding: 0;
