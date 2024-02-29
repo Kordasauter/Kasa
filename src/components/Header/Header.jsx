@@ -6,7 +6,6 @@ import logo from '../../assets/logo.svg'
 
 function Header(props) {
     const location = useLocation()
-    console.log(location.pathname)
     return (
         <div className="header">
             <img src={logo} alt="logo Kasa" />
