@@ -36,4 +36,7 @@ nav div {
         color: $text-black;
         text-decoration: none;
     }
+    .active {
+        text-decoration: underline;
+    }
 }
