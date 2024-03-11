@@ -1,4 +1,6 @@
+//composant React
 import React from 'react'
+//images d'étoile
 import activeStar from '../../assets/star-active 3.svg'
 import inactiveStar from '../../assets/star-inactive 1.svg'
 

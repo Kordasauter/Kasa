@@ -1,22 +1,22 @@
+//composant React
 import React from 'react'
+//bannière
 import Banner from '../Banner/Banner'
-import CardsContainer from '../CardsContainer/CardsContainer'
 import bannerImage from '../../assets/homeBanner.jpg'
+//conteneur des cartes logement
+import CardsContainer from '../CardsContainer/CardsContainer'
+//style
 import '../../styles/home.scss'
 
 function Home(props) {
     return (
-        <div className="home">
-            <div></div> {/* placeholder */}
-            <div className="home_content">
-                <Banner
-                    imgURL={bannerImage}
-                    text="Chez vous, partout et ailleurs"
-                />
-                <CardsContainer />
-            </div>
-            <div></div> {/* placeholder */}
-        </div>
+        <main className="home">
+            <Banner
+                imgURL={bannerImage}
+                text="Chez vous, partout et ailleurs"
+            />
+            <CardsContainer />
+        </main>
     )
 }
 

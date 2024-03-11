@@ -1,22 +1,22 @@
+//composant React
 import React from 'react'
 //Bannière
 import Banner from '../Banner/Banner'
 import bannerImage from '../../assets/aboutBanner.jpg'
 //Menu déroulant
-import Dropdown from '../Dropdown/Dropdown'
+import Collapse from '../Collapse/Collapse'
 //Contenu des menus déroulants
 import aboutList from '../../datas/about.json'
-
+//style
 import '../../styles/aPropos.scss'
 
 function APropos(props) {
     return (
-        <div className="aPropos">
-            <div></div> {/* placeholder */}
+        <main className="aPropos">
             <Banner imgURL={bannerImage} />
-            <div className="dropdownContainer">
+            <section className="dropdownContainer">
                 {aboutList.map(({ id, title, text }) => (
-                    <Dropdown
+                    <Collapse
                         key={id}
                         id={id}
                         title={title}
@@ -24,9 +24,8 @@ function APropos(props) {
                         open={false}
                     />
                 ))}
-            </div>
-            <div></div> {/* placeholder */}
-        </div>
+            </section>
+        </main>
     )
 }
 

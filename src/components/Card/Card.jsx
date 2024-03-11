@@ -1,4 +1,6 @@
+//composant React
 import React from 'react'
+//style
 import '../../styles/card.scss'
 
 function Card({ title, cover }) {

@@ -1,17 +1,10 @@
 .home {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 43px;
+    padding: 50px 0;
     @media (max-width: 600px) {
-        gap: 27px;
-    }
-
-    .home_content {
-        display: flex;
-        flex-direction: column;
-        gap: 43px;
-        @media (max-width: 600px) {
-            gap: 22px;
-        }
+        gap: 22px;
+        padding: 22px 0;
     }
 }

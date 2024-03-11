@@ -1,5 +1,8 @@
+//composant React
 import React from 'react'
+//Tag
 import Tag from '../Tag/Tag'
+//style
 import '../../styles/tagContainer.scss'
 
 function Tagscontainer({ tagList }) {

@@ -2,8 +2,10 @@
     display: flex;
     flex-direction: column;
     gap: 38px;
+    padding: 38px 0;
     @media (max-width: 600px) {
         gap: 19px;
+        padding: 19px 0;
     }
     .dropdownContainer {
         width: 1023px;

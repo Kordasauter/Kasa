@@ -1,81 +1,83 @@
 @import './utils/variables';
 @import './utils/mixins';
-.horizontal {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    @media (max-width: 600px) {
-        flex-direction: column;
-    }
-
-    .host {
-        align-items: center;
-        gap: 10px;
-        @media (max-width: 600px) {
-            flex-direction: row;
-        }
-        .name {
-            color: $primary-color;
-            text-align: right;
-            @include policeSizeWeight($fontSize--s, 500);
-            @media (max-width: 600px) {
-                @include policeSizeWeight($fontSize--xxs, 500);
-            }
-        }
-        img {
-            height: 64px;
-            border-radius: 100%;
-            @media (max-width: 600px) {
-                height: 32px;
-            }
-        }
-    }
-}
-.vertical {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    + .left {
-        @media (max-width: 600px) {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            margin-bottom: 13px;
-            .rating {
-                justify-content: flex-start;
-                margin: auto 0;
-                width: 98px;
-                height: 18px;
-            }
-        }
-    }
-}
 
 .logement {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    padding: 50px 0;
     @media (max-width: 600px) {
-        gap: 27px;
+        padding: 27px 0;
     }
-    // gap: 0px;
-    .title {
-        color: $primary-color;
+    .infoLogement {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
 
-        @include policeSizeWeight($fontSize--l, 500);
         @media (max-width: 600px) {
-            @include policeSizeWeight($fontSize--s, 500);
-            margin: 15px 0 5px 0;
+            flex-direction: column;
         }
-    }
-    .location {
-        color: $text-black;
 
-        @include policeSizeWeight($fontSize--s, 500);
-    }
-    .dropdown {
-        width: auto;
+        .blocInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            .title {
+                color: $primary-color;
+
+                @include policeSizeWeight($fontSize--l, 500);
+                @media (max-width: 600px) {
+                    @include policeSizeWeight($fontSize--s, 500);
+                    margin: 15px 0 5px 0;
+                }
+            }
+            .location {
+                color: $text-black;
+
+                @include policeSizeWeight($fontSize--s, 500);
+            }
+            + .left {
+                @media (max-width: 600px) {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    margin-bottom: 13px;
+                }
+                .host {
+                    align-items: center;
+                    gap: 10px;
+                    @media (max-width: 600px) {
+                        flex-direction: row;
+                    }
+                    .name {
+                        color: $primary-color;
+                        text-align: right;
+                        @include policeSizeWeight($fontSize--s, 500);
+                        @media (max-width: 600px) {
+                            width: min-content;
+                            line-height: 100%;
+                            @include policeSizeWeight($fontSize--xxs, 500);
+                        }
+                    }
+                    img {
+                        height: 64px;
+                        border-radius: 100%;
+                        @media (max-width: 600px) {
+                            height: 32px;
+                        }
+                    }
+                }
+                .rating {
+                    display: flex;
+                    justify-content: flex-end;
+                    @media (max-width: 600px) {
+                        justify-content: flex-start;
+                        margin: auto 0;
+                        width: 98px;
+                        height: 18px;
+                    }
+                }
+            }
+        }
     }
     .descriptionEquipement {
         display: grid;
@@ -85,15 +87,8 @@
             grid-template-columns: repeat(1, 1fr);
             gap: 20px;
         }
-    }
-    .rating {
-        display: flex;
-        justify-content: flex-end;
-        @media (max-width: 600px) {
-            justify-content: flex-start;
-            margin: auto 0;
-            width: 98px;
-            height: 18px;
+        .collapse {
+            width: auto;
         }
     }
 }

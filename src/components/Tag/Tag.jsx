@@ -1,3 +1,4 @@
+//composant React
 import React from 'react'
 
 function Tag({ tag }) {

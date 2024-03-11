@@ -1,12 +1,12 @@
 @import './utils/variables';
 @import './utils/mixins';
-.header,
+header,
 nav,
 nav div {
     display: flex;
     justify-content: space-between;
 }
-.header {
+header {
     img {
         @media (max-width: 600px) {
             width: 145px;

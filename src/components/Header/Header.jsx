@@ -1,13 +1,16 @@
+//composants React
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import '../../styles/header.scss'
+//image do logo
 import logo from '../../assets/logo.svg'
+//style
+import '../../styles/header.scss'
 
 function Header(props) {
     const location = useLocation()
     return (
-        <div className="header">
+        <header>
             <img src={logo} alt="logo Kasa" />
             <nav>
                 {location.pathname === '/' ? (
@@ -33,7 +36,7 @@ function Header(props) {
                     </div>
                 )}
             </nav>
-        </div>
+        </header>
     )
 }
 

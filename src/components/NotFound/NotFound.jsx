@@ -1,12 +1,12 @@
+//composants React
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+//style
 import '../../styles/notFound.scss'
 
-const NotFound = () => {
+function NotFound(props) {
     return (
-        <div className="notFound">
-            <div></div> {/* placeholder */}
+        <section className="notFound">
             <p className="errorCode">404</p>
             <p className="errorText">
                 Oups! La page que vous demandez n'existe pas.
@@ -14,8 +14,7 @@ const NotFound = () => {
             <div className="link">
                 <Link to="/">Retourner sur la page d’accueil</Link>
             </div>
-            <div></div> {/* placeholder */}
-        </div>
+        </section>
     )
 }
 

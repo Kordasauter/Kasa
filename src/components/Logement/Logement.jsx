@@ -1,13 +1,19 @@
+//composants React
 import React from 'react'
 import { useParams } from 'react-router-dom'
-// import { useState } from 'react'
-// import { useEffect } from 'react'
-import Carrousel from '../Carrousel/Carrousel'
-import Tagscontainer from '../TagsContainer/Tagscontainer'
+//liste des logements
 import logementList from '../../datas/logements.json'
+//Carrousel de photos
+import Carrousel from '../Carrousel/Carrousel'
+//liste des tags
+import Tagscontainer from '../TagsContainer/Tagscontainer'
+//notes du logement
 import Rating from '../Rating/Rating'
-import Dropdown from '../Dropdown/Dropdown'
+//texte dépliant
+import Collapse from '../Collapse/Collapse'
+//404
 import NotFound from '../NotFound/NotFound'
+//style
 import '../../styles/logement.scss'
 
 function Logement(props) {
@@ -17,48 +23,40 @@ function Logement(props) {
     if (!logement) return <NotFound />
 
     return (
-        <div className="logement">
-            <div></div> {/* placeholder */}
-            <div>
-                <Carrousel
-                    photos={logement.pictures}
-                    size={logement.pictures.length}
-                    title={logement.title}
+        <main className="logement">
+            <Carrousel
+                photos={logement.pictures}
+                size={logement.pictures.length}
+                title={logement.title}
+            />
+            <section className="infoLogement">
+                <div className="blocInfo">
+                    <h2 className="title">{logement.title}</h2>
+                    <div className="location">{logement.location}</div>
+                    <Tagscontainer tagList={logement.tags} />
+                </div>
+                <div className="blocInfo left">
+                    <div className="infoLogement host">
+                        <div className="name">{logement.host.name}</div>
+                        <img src={logement.host.picture} alt="hôte"></img>
+                    </div>
+                    <Rating note={logement.rating} />
+                </div>
+            </section>
+            <section className="descriptionEquipement">
+                <Collapse title="Description" text={logement.description} />
+                <Collapse
+                    title="Equipements"
+                    text={
+                        <ul>
+                            {logement.equipments.map((equipement, index) => (
+                                <li key={'equipment' + index}>{equipement}</li>
+                            ))}
+                        </ul>
+                    }
                 />
-                <div className="horizontal">
-                    <div className="vertical">
-                        <h2 className="title">{logement.title}</h2>
-                        <div className="location">{logement.location}</div>
-                        <Tagscontainer tagList={logement.tags} />
-                    </div>
-                    <div className="vertical left">
-                        <div className="horizontal host">
-                            <div className="name">{logement.host.name}</div>
-                            <img src={logement.host.picture} alt="hôte"></img>
-                        </div>
-                        <Rating note={logement.rating} />
-                    </div>
-                </div>
-                <div className="descriptionEquipement">
-                    <Dropdown title="Description" text={logement.description} />
-                    <Dropdown
-                        title="Equipements"
-                        text={
-                            <ul>
-                                {logement.equipments.map(
-                                    (equipement, index) => (
-                                        <li key={'equipment' + index}>
-                                            {equipement}
-                                        </li>
-                                    )
-                                )}
-                            </ul>
-                        }
-                    />
-                </div>
-            </div>
-            <div></div> {/* placeholder */}
-        </div>
+            </section>
+        </main>
     )
 }
 
