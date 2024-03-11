@@ -13,19 +13,20 @@ function Collapse({ title, text, open }) {
     useEffect(() => {}, [isOpen])
     return (
         <div className="collapse">
-            <div className="collapseHeader">
+            <div
+                className="collapseHeader"
+                onMouseDown={(e) => {
+                    e.preventDefault()
+                    setIsOpen(!isOpen)
+                    setInitialLoad(false)
+                }}
+            >
                 <div className="collapseTitle">{title}</div>
                 <img
                     src={arrowup}
                     alt="fleche"
-                    onMouseDown={(e) => {
-                        e.preventDefault()
-                        setIsOpen(!isOpen)
-                        setInitialLoad(false)
-                        e.currentTarget.className === 'fleche--up'
-                            ? (e.currentTarget.className = 'fleche')
-                            : (e.currentTarget.className = 'fleche--up')
-                    }}
+                    id="arrow"
+                    className={isOpen ? 'fleche--up' : 'fleche'}
                 />
             </div>
             {isOpen ? (

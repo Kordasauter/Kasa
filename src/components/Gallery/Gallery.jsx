@@ -5,12 +5,12 @@ import { useState } from 'react'
 import leftArrow from '../../assets/LeftArrow.svg'
 import rightArrow from '../../assets/RightArrow.svg'
 //style
-import '../../styles/carrousel.scss'
+import '../../styles/gallery.scss'
 
-function Carrousel({ photos, size, title }) {
+function Gallery({ photos, size, title }) {
     const [index, setIndex] = useState(0)
     return (
-        <section className="carrousel">
+        <section className="gallery">
             {/* si une seule image présente, ne pas afficher les flèches de navigation */}
             {size > 1 && (
                 <div className="button previous">
@@ -54,4 +54,4 @@ function Carrousel({ photos, size, title }) {
     )
 }
 
-export default Carrousel
+export default Gallery

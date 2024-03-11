@@ -1,7 +1,7 @@
 @import './utils/variables';
 @import './utils/mixins';
-.carrousel {
-    width: 1240px;
+.gallery {
+    max-width: 1240px;
     height: 415px;
     position: relative;
     overflow: hidden;

@@ -3,8 +3,8 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 //liste des logements
 import logementList from '../../datas/logements.json'
-//Carrousel de photos
-import Carrousel from '../Carrousel/Carrousel'
+//Gallery de photos
+import Gallery from '../Gallery/Gallery'
 //liste des tags
 import Tagscontainer from '../TagsContainer/Tagscontainer'
 //notes du logement
@@ -24,7 +24,7 @@ function Logement(props) {
 
     return (
         <main className="logement">
-            <Carrousel
+            <Gallery
                 photos={logement.pictures}
                 size={logement.pictures.length}
                 title={logement.title}

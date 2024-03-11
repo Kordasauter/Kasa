@@ -19,9 +19,7 @@
         @include policeSizeWeight($fontSize--m, 700);
         @media (max-width: 600px) {
             padding: 0px 0px 0px 10px;
-            // padding: 0;
             height: 30px;
-            // margin: 0;
         }
         .collapseTitle {
             @media (max-width: 600px) {
@@ -44,7 +42,6 @@
         margin: 0;
     }
     .textContainer {
-        // transform: translate(0px, 00%);
         transition: transform 0.35s linear;
         &--hidden {
             overflow: hidden;

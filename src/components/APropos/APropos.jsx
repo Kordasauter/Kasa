@@ -14,7 +14,7 @@ function APropos(props) {
     return (
         <main className="aPropos">
             <Banner imgURL={bannerImage} />
-            <section className="dropdownContainer">
+            <section className="collapseContainer">
                 {aboutList.map(({ id, title, text }) => (
                     <Collapse
                         key={id}
