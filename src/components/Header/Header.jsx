@@ -15,7 +15,7 @@ function Header(props) {
             <nav>
                 {location.pathname === '/' ? (
                     <div>
-                        <Link className="active" to="/">
+                        <Link className="active" to="/Kasa">
                             Accueil
                         </Link>
                     </div>
