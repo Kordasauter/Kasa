@@ -21,7 +21,7 @@ function Header(props) {
                     </div>
                 ) : (
                     <div>
-                        <Link to="/">Accueil</Link>
+                        <Link to="/Kasa">Accueil</Link>
                     </div>
                 )}
                 {location.pathname === '/about' ? (

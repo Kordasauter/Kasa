@@ -20,8 +20,8 @@ root.render(
         <BrowserRouter>
             <Header />
             <Routes>
-                <Route exact path="/Kasa" element={<Home />} />
                 <Route path="/*" element={<NotFound />} />
+                <Route exact path="/Kasa" element={<Home />} />
                 <Route exact path="/logement/:id" element={<Logement />} />
                 <Route exact path="/logement/" element={<NotFound />} />
                 <Route exact path="/about" element={<APropos />} />
