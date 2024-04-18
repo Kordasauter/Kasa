@@ -13,21 +13,28 @@ function Gallery({ photos, size, title }) {
         <section className="gallery">
             {/* si une seule image présente, ne pas afficher les flèches de navigation */}
             {size > 1 && (
-                <div className="button previous">
+                <div
+                    className="button previous"
+                    onMouseDown={(e) => {
+                        e.preventDefault()
+                        index <= 0 ? setIndex(size - 1) : setIndex(index - 1)
+                    }}
+                >
                     <img
                         className="arrow"
                         src={leftArrow}
-                        onMouseDown={(e) => {
-                            e.preventDefault()
-                            index <= 0
-                                ? setIndex(size - 1)
-                                : setIndex(index - 1)
-                        }}
                         alt="bouton précédent"
                     />
                 </div>
             )}
-            <img className="photo" src={photos[index]} alt={title} />
+            <img
+                className="photo"
+                src={photos[index]}
+                alt={title}
+                onMouseDown={(e) => {
+                    e.preventDefault()
+                }}
+            />
             {/* si une seule image présente, ne pas afficher le compteur d'images */}
             {size > 1 && (
                 <div className="compteurPhoto">
@@ -36,16 +43,16 @@ function Gallery({ photos, size, title }) {
             )}
             {/* si une seule image présente, ne pas afficher les flèches de navigation */}
             {size > 1 && (
-                <div className="button next">
+                <div
+                    className="button next"
+                    onMouseDown={(e) => {
+                        e.preventDefault()
+                        index >= size - 1 ? setIndex(0) : setIndex(index + 1)
+                    }}
+                >
                     <img
                         className="arrow"
                         src={rightArrow}
-                        onMouseDown={(e) => {
-                            e.preventDefault()
-                            index >= size - 1
-                                ? setIndex(0)
-                                : setIndex(index + 1)
-                        }}
                         alt="bouton suivant"
                     />
                 </div>
